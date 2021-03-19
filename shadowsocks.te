@@ -15,4 +15,4 @@ allow shadowsocks_t self:tcp_socket create_stream_socket_perms;
 allow shadowsocks_t shadowsocks_port_t:tcp_socket name_bind;
 corenet_tcp_bind_generic_node(shadowsocks_t)
 corenet_tcp_connect_http_port(shadowsocks_t)
-#sysnet_dns_name_resolve(shadowsocks_t)
+sysnet_dns_name_resolve(shadowsocks_t)
