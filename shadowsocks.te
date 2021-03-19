@@ -1,0 +1,18 @@
+policy_module(shadowsocks, 1.0)
+
+type shadowsocks_t;
+type shadowsocks_exec_t;
+init_daemon_domain(shadowsocks_t, shadowsocks_exec_t)
+
+type shadowsocks_conf_t;
+files_config_file(shadowsocks_conf_t)
+
+type shadowsocks_port_t;
+corenet_port(shadowsocks_port_t)
+
+allow shadowsocks_t shadowsocks_conf_t:file read_file_perms;
+allow shadowsocks_t self:tcp_socket create_stream_socket_perms;
+allow shadowsocks_t shadowsocks_port_t:tcp_socket name_bind;
+corenet_tcp_bind_generic_node(shadowsocks_t)
+corenet_tcp_connect_http_port(shadowsocks_t)
+#sysnet_dns_name_resolve(shadowsocks_t)

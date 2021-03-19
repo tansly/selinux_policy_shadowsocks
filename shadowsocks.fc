@@ -1,0 +1,2 @@
+/usr/local/bin/ssserver                 --          gen_context(system_u:object_r:shadowsocks_exec_t)
+/etc/ssserver.conf                  --          gen_context(system_u:object_r:shadowsocks_conf_t)
