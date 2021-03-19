@@ -14,5 +14,8 @@ allow shadowsocks_t shadowsocks_conf_t:file read_file_perms;
 allow shadowsocks_t self:tcp_socket create_stream_socket_perms;
 allow shadowsocks_t shadowsocks_port_t:tcp_socket name_bind;
 corenet_tcp_bind_generic_node(shadowsocks_t)
-corenet_tcp_connect_http_port(shadowsocks_t)
+corenet_tcp_connect_all_ports(shadowsocks_t)
+corenet_udp_send_all_ports(shadowsocks_t)
+corenet_udp_bind_all_ports(shadowsocks_t)
+corenet_udp_bind_all_nodes(shadowsocks_t)
 sysnet_dns_name_resolve(shadowsocks_t)
